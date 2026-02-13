@@ -1,68 +1,98 @@
 /** @format */
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ZoomIn } from 'lucide-react';
+import { X, Heart, Maximize2 } from 'lucide-react';
 
-const images = [
-	'https://picsum.photos/id/1015/600/400',
-	'https://picsum.photos/id/1016/400/600',
-	'https://picsum.photos/id/1018/600/400',
-	'https://picsum.photos/id/1019/400/600',
-	'https://picsum.photos/id/1020/600/400',
-	'https://picsum.photos/id/1021/400/600',
-];
+import Img1 from '../Songs/images/1.jpg';
+import Img2 from '../Songs/images/2..jpg';
+import Img3 from '../Songs/images/3..jpg';
+import Img4 from '../Songs/images/4.jpg';
+import Img5 from '../Songs/images/5.jpg';
+import Img6 from '../Songs/images/6..jpg';
+import Img7 from '../Songs/images/7..jpg';
+import Img8 from '../Songs/images/8..jpg';
+import Img9 from '../Songs/images/9..jpg';
+import Img10 from '../Songs/images/10.jpg';
 
 const Gallery = () => {
 	const [selectedImage, setSelectedImage] = useState(null);
 
+	// Local Images from Songs/images folder
+	const galleryImages = [
+		Img1,
+		Img2,
+		Img3,
+		Img4,
+		Img5,
+		Img6,
+		Img7,
+		Img8,
+		Img9,
+		Img10,
+	];
+
 	return (
 		<section
 			id='gallery'
-			className='h-[calc(91vh-7rem)] w-full py-8 mt-3 overflow-y-auto scrollbar-hide bg-transparent relative'>
-			{/* Decorative floral texture overlay (subtle) */}
-			<div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/flowers.png')]"></div>
+			className='h-[calc(91vh-7rem)] w-full py-10 relative overflow-y-auto scrollbar-hide flex flex-col items-center mt-3'>
+			{/* Royal Background Texture */}
+			<div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/black-linen.png')] mix-blend-overlay"></div>
 
-			<div className='container mx-auto px-4 relative z-10'>
-				<motion.h2
-					initial={{ opacity: 0, y: 30 }}
+			<div className='container mx-auto px-4 z-10'>
+				<motion.div
+					initial={{ opacity: 0, y: -20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
-					className='text-4xl md:text-5xl font-telugu text-gold text-center mb-12 drop-shadow-md'>
-					Memorable Moments
-				</motion.h2>
+					className='text-center mb-10'>
+					<h2 className='text-4xl md:text-5xl font-telugu text-gold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mb-3'>
+						Mana Sweet Memories 💖
+					</h2>
+					<p className='text-cream/80 font-serif italic text-sm md:text-base'>
+						"Prathi kshanam nee tho oka beautiful painting
+						laantidi..."
+					</p>
+				</motion.div>
 
-				<div className='columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6'>
-					{images.map((src, index) => (
+				{/* Uniform Vertical Grid Layout (9:16) */}
+				<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 mx-auto max-w-7xl pb-10'>
+					{galleryImages.map((src, index) => (
 						<motion.div
 							key={index}
-							initial={{ opacity: 0, y: 50 }}
-							whileInView={{ opacity: 1, y: 0 }}
+							initial={{ opacity: 0, scale: 0.9 }}
+							whileInView={{ opacity: 1, scale: 1 }}
 							viewport={{ once: true }}
-							transition={{ delay: index * 0.1 }}
-							whileHover={{
-								y: -10,
-								rotate: index % 2 === 0 ? 2 : -2,
-							}}
+							transition={{ duration: 0.5, delay: index * 0.05 }}
+							whileHover={{ scale: 1.05, zIndex: 10 }}
 							onClick={() => setSelectedImage(src)}
-							className='break-inside-avoid relative group cursor-pointer rounded-lg p-2 bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/40 shadow-xl backdrop-blur-sm'>
-							<div className='overflow-hidden rounded-md border border-gold/20'>
+							className='relative group cursor-pointer rounded-xl overflow-hidden shadow-lg border border-gold/20 bg-black aspect-[9/16]'>
+							<div className='w-full h-full relative'>
 								<img
 									src={src}
 									alt={`Memory ${index + 1}`}
 									loading='lazy'
-									className='w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110'
+									className='w-full h-full object-cover transition-all duration-700 filter sepia-[0.3] group-hover:sepia-0 group-hover:scale-110'
 								/>
-							</div>
-							<div className='absolute inset-0 bg-maroon/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg'>
-								<ZoomIn className='text-gold w-10 h-10 drop-shadow-lg scale-0 group-hover:scale-110 transition-transform duration-300 delay-100' />
+
+								{/* Gold Frame Overlay (Visible on Hover) */}
+								<div className='absolute inset-0 border-[3px] border-gold/0 group-hover:border-gold/80 transition-all duration-300 rounded-xl'></div>
+
+								{/* Gradient Overlay */}
+								<div className='absolute inset-0 bg-gradient-to-t from-maroon/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
+
+								{/* Icon */}
+								<div className='absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0'>
+									<div className='bg-gold/90 p-2 rounded-full text-maroon shadow-lg'>
+										<Maximize2 size={14} />
+									</div>
+								</div>
 							</div>
 						</motion.div>
 					))}
 				</div>
 			</div>
 
-			{/* Lightbox Modal */}
+			{/* Fullscreen Lightbox */}
 			<AnimatePresence>
 				{selectedImage && (
 					<motion.div
@@ -71,24 +101,33 @@ const Gallery = () => {
 						exit={{ opacity: 0 }}
 						className='fixed inset-0 z-50 flex items-center justify-center bg-maroon/95 backdrop-blur-xl p-4'
 						onClick={() => setSelectedImage(null)}>
+						{/* Close Button */}
+						<button
+							className='absolute top-6 right-6 md:top-10 md:right-10 text-white/50 hover:text-white transition-colors z-50 group'
+							onClick={() => setSelectedImage(null)}>
+							<X
+								size={32}
+								className='group-hover:rotate-90 transition-transform duration-300'
+							/>
+						</button>
+
 						<motion.div
-							initial={{ scale: 0.8, opacity: 0, rotateX: 15 }}
-							animate={{ scale: 1, opacity: 1, rotateX: 0 }}
-							exit={{ scale: 0.8, opacity: 0, rotateX: -15 }}
-							className='relative max-w-5xl max-h-[90vh] p-2 bg-gradient-to-br from-gold to-yellow-600 rounded-lg shadow-2xl'
+							layoutId={`image-${selectedImage}`}
+							initial={{ scale: 0.9, opacity: 0 }}
+							animate={{ scale: 1, opacity: 1 }}
+							exit={{ scale: 0.9, opacity: 0 }}
+							className='relative max-w-5xl max-h-[90vh] rounded-lg overflow-hidden shadow-[0_0_50px_rgba(218,165,32,0.3)] border border-gold/20'
 							onClick={(e) => e.stopPropagation()}>
-							<div className='bg-black rounded-lg overflow-hidden'>
-								<img
-									src={selectedImage}
-									alt='Selected Memory'
-									className='max-w-full max-h-[85vh] object-contain'
-								/>
+							<img
+								src={selectedImage}
+								alt='Selected Memory'
+								className='max-w-full max-h-[90vh] object-contain'
+							/>
+							<div className='absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/90 to-transparent'>
+								<p className='text-gold font-telugu text-lg text-center'>
+									Precious Moment ❤️
+								</p>
 							</div>
-							<button
-								className='absolute -top-4 -right-4 text-maroon bg-gold hover:bg-white rounded-full p-2 transition-all shadow-lg hover:rotate-90'
-								onClick={() => setSelectedImage(null)}>
-								<X size={24} />
-							</button>
 						</motion.div>
 					</motion.div>
 				)}

@@ -53,3 +53,7 @@ body {
 .font-telugu {
 	font-family: 'Lakki Reddy', serif;
 }
+
+.clip-triangle {
+	clip-path: polygon(0 0, 100% 0, 50% 100%);
+}

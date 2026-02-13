@@ -17,6 +17,7 @@ import LoveStory from './sections/LoveStory';
 import Gallery from './sections/Gallery';
 import Proposal from './sections/Proposal';
 import Songs from './sections/Songs';
+import ValentineWishes from './sections/ValentineWishes';
 
 const AnimatedRoutes = () => {
 	const location = useLocation();
@@ -25,7 +26,7 @@ const AnimatedRoutes = () => {
 
 	const handleProposalYes = () => {
 		setPlayMusic(true);
-		setInitialTrack(5); // Index for 'Yedemaina Sakhi'
+		setInitialTrack(0); // Index for 'Yedemaina Sakhi'
 	};
 
 	return (
@@ -81,6 +82,14 @@ const AnimatedRoutes = () => {
 								autoPlay={playMusic}
 								initialTrackIndex={initialTrack}
 							/>
+						</PageWrapper>
+					}
+				/>
+				<Route
+					path='/wishes'
+					element={
+						<PageWrapper>
+							<ValentineWishes />
 						</PageWrapper>
 					}
 				/>

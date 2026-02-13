@@ -5,7 +5,7 @@ export const loveStoryEvents = [
 		date: 'The Beginning',
 		title: 'Strangers to Someone Special',
 		description:
-			'Manam ela start ayyamo gurthu vasthe ippatiki navvostundi 😊 Stranger la start ayyamu, kani ippudu ninnu alochinchakunda oka roju kuda complete kaadhu 🤍',
+			'Manam ela start ayyamo gurthu vasthe ippatiki navvostundi 😊 Stranger la start ayyamu, kani ippudu ninnu alochinchakunda oka roju kuda complete kaadhu 💝',
 		icon: 'User',
 	},
 	{
@@ -19,7 +19,7 @@ export const loveStoryEvents = [
 		date: 'Little Secrets',
 		title: 'Reasons to See You',
 		description:
-			'Nijam cheppalante, nenu chala sarlu ninnu chudataniki reasons create chesanu 😅💕 Nuvvu enjoy chestunte chusi silent ga happy ayyedani 🤍',
+			'Nijam cheppalante, nenu chala sarlu ninnu chudataniki reasons create chesanu 😅💕 Nuvvu enjoy chestunte chusi silent ga happy ayyedani 💝',
 		icon: 'Smile',
 	},
 	{
@@ -33,7 +33,7 @@ export const loveStoryEvents = [
 		date: 'The Bond',
 		title: 'Our Safe Place',
 		description:
-			'Nuvvu accept chesina moment nunchi naku oka safe place dorikindi 🤗🤍 Nuvvu naa life lo ochina best blessing ani nenu daily feel avthunna 🙏💛',
+			'Nuvvu accept chesina moment nunchi naku oka safe place dorikindi 🤗💝 Nuvvu naa life lo ochina best blessing ani nenu daily feel avthunna 🙏💛',
 		icon: 'Home',
 	},
 	{
@@ -47,7 +47,7 @@ export const loveStoryEvents = [
 		date: 'Forever Us',
 		title: 'Sweetest Chapter',
 		description:
-			'Na attention, na time, na care, na heart… anni neekey ra 🫶💖 Stranger ga start ayina mana story… sweetest chapter ayyindi 📖💞 Love you so much 🤍😘',
+			'Na attention, na time, na care, na heart… anni neekey kanna 🫶💖 Stranger ga start ayina mana story… sweetest chapter ayyindi 📖💞 Love you so much Bujji Kanna 💝😘',
 		icon: 'Star',
 	},
 ];

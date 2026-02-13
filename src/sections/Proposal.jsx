@@ -2,15 +2,27 @@
 
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Smile, Frown } from 'lucide-react';
-import gsap from 'gsap';
+import { Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import gsap from 'gsap';
+import Vikramasimha from '../Songs/Vikramasimha - Yedemaina Sakhi Video _ A.R. Rahman _ Rajinikanth_ Deepika(MP3_160K).mp3';
 
 const Proposal = ({ onYes }) => {
 	const [noCount, setNoCount] = useState(0);
 	const [yesPressed, setYesPressed] = useState(false);
 	const noButtonRef = useRef(null);
 	const navigate = useNavigate();
+	const audioRef = useRef(new Audio(Vikramasimha));
+
+	// Cleanup audio on unmount
+	React.useEffect(() => {
+		return () => {
+			if (audioRef.current) {
+				audioRef.current.pause();
+				audioRef.current.currentTime = 0;
+			}
+		};
+	}, []);
 
 	const handleNoHover = () => {
 		if (noCount < 5) {
@@ -32,13 +44,19 @@ const Proposal = ({ onYes }) => {
 		setYesPressed(true);
 		if (onYes) onYes();
 
+		// Play song immediately
+		audioRef.current
+			.play()
+			.catch((e) => console.log('Audio play failed:', e));
+
 		// Trigger celebration effects
 		triggerCelebration();
 
 		// Auto navigate to songs after delay
 		setTimeout(() => {
+			audioRef.current.pause();
 			navigate('/songs');
-		}, 4000);
+		}, 6000);
 	};
 
 	const triggerCelebration = () => {
@@ -166,11 +184,20 @@ const Proposal = ({ onYes }) => {
 										repeat: Infinity,
 										duration: 2,
 									}}>
-									<Smile className='w-24 h-24 text-gold drop-shadow-lg' />
+									<img
+										src='https://emojiisland.com/cdn/shop/products/See_No_Evil_Monkey_Emoji_large.png?v=1571606065'
+										alt='Cheeky Monkey'
+										className='w-24 h-24 drop-shadow-lg object-contain'
+									/>
 								</motion.div>
 
-								<h2 className='text-4xl md:text-6xl font-telugu text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold drop-shadow-sm'>
-									I Knew It! ❤️
+								<h2 className='text-3xl md:text-5xl font-telugu drop-shadow-sm leading-tight'>
+									<span className='text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold'>
+										Adhi naaku mundhe telusu
+									</span>
+									<span className='inline-block ml-2 text-white filter-none'>
+										🤭💘
+									</span>
 								</h2>
 
 								<p className='text-xl md:text-2xl text-cream/90 font-serif max-w-lg mx-auto leading-relaxed border-t border-b border-gold/20 py-6'>
