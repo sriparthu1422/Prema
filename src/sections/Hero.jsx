@@ -14,20 +14,22 @@ const Hero = () => {
 			className='h-[calc(91vh-7rem)] w-full flex flex-col mt-3 justify-center items-center relative'>
 			<div className='absolute inset-0 opacity-20 pointer-events-none'></div>
 
-			<div className='z-10 w-full max-w-3xl px-6'>
+			<div className='z-10 w-full max-w-2xl px-4'>
 				<motion.div
 					initial={{ scale: 0.9, opacity: 0, y: 20 }}
 					animate={{ scale: 1, opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
-					className='relative border border-gold/20 p-8 md:p-12 rounded-[3.5rem] shadow-2xl overflow-hidden bg-black/40 backdrop-blur-lg text-center'>
+					className='relative border border-gold/20 p-6 md:p-10 rounded-[3rem] shadow-2xl overflow-hidden bg-black/40 backdrop-blur-lg text-center'>
 					{/* Ornamental Corners */}
 					<div className='absolute top-8 left-8 w-16 h-16 border-gold/30 rounded-tl-2xl opacity-60'></div>
 					<div className='absolute top-8 right-8 w-16 h-16 border-gold/30 rounded-tr-2xl opacity-60'></div>
 					<div className='absolute bottom-8 left-8 w-16 h-16  border-gold/30 rounded-bl-2xl opacity-60'></div>
 					<div className='absolute bottom-8 right-8 w-16 h-16  border-gold/30 rounded-br-2xl opacity-60'></div>
 
-					<h1 className='font-telugu text-4xl md:text-6xl text-gold mb-8 drop-shadow-lg tracking-wide'>
-						Prema Valentine
+					<h1 className='font-telugu text-2xl md:text-3xl text-gold mb-6 drop-shadow-lg tracking-wide leading-relaxed'>
+						{!isOpen
+							? 'Idhigo naa prema gift... mee kosam special ga pack chesanu 🎁💝 Oka sari open chey kanna 🙈'
+							: 'Daivam tho MudiPadina Prema 🙏💖'}
 					</h1>
 
 					<AnimatePresence mode='wait'>
@@ -46,7 +48,7 @@ const Hero = () => {
 								onClick={() => setIsOpen(true)}>
 								<div className='relative'>
 									<Gift
-										size={200}
+										size={120}
 										className='text-gold-light drop-shadow-[0_0_15px_rgba(255,215,0,0.6)] group-hover:scale-110 transition-transform duration-300'
 									/>
 									<div className='absolute inset-0 bg-gold/20 blur-2xl rounded-full scale-110 animate-pulse'></div>
@@ -72,18 +74,18 @@ const Hero = () => {
 										animate={{ opacity: 1, y: 0 }}
 										transition={{ delay: 0.3 }}
 										className='font-serif text-3xl md:text-5xl text-gold-light font-bold'>
-										Name 1{' '}
+										Sri Parthu{' '}
 										<span className='text-deepRed text-4xl'>
 											&
 										</span>{' '}
-										Name 2
+										Rakshitha
 									</motion.h2>
 									<motion.p
 										initial={{ opacity: 0 }}
 										animate={{ opacity: 1 }}
 										transition={{ delay: 0.6 }}
-										className='text-cream/80 font-telugu text-lg italic'>
-										A Love Story Written in the Stars
+										className='text-cream/80 font-serif text-lg italic'>
+										Stranger nunchi Soulmate varaku
 									</motion.p>
 								</div>
 

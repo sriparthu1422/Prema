@@ -23,9 +23,9 @@ const Navbar = () => {
 				{/* Logo */}
 				<Link
 					to='/'
-					className='text-gold-light font-telugu text-2xl font-bold flex items-center gap-2 cursor-pointer'>
+					className='text-gold-light font-serif text-2xl font-bold flex items-center gap-2 cursor-pointer'>
 					<Heart className='w-6 h-6 text-deepRed fill-current animate-pulse' />
-					<span>Prema</span>
+					<span>RakshithaParthu</span>
 				</Link>
 
 				{/* Desktop Menu */}
@@ -35,10 +35,9 @@ const Navbar = () => {
 							key={link.to}
 							to={link.to}
 							className={({ isActive }) =>
-								`text-cream font-serif hover:text-gold transition-colors cursor-pointer text-lg tracking-wide relative group ${
-									isActive
-										? 'text-gold border-b-2 border-gold'
-										: ''
+								`text-cream font-serif hover:text-gold transition-colors cursor-pointer text-lg tracking-wide relative group ${isActive
+									? 'text-gold border-b-2 border-gold'
+									: ''
 								}`
 							}>
 							{link.name}
@@ -70,10 +69,9 @@ const Navbar = () => {
 									to={link.to}
 									onClick={() => setIsOpen(false)}
 									className={({ isActive }) =>
-										`text-cream font-serif text-2xl hover:text-gold transition-colors cursor-pointer ${
-											isActive
-												? 'text-gold underline decoration-gold decoration-2 underline-offset-8'
-												: ''
+										`text-cream font-serif text-2xl hover:text-gold transition-colors cursor-pointer ${isActive
+											? 'text-gold underline decoration-gold decoration-2 underline-offset-8'
+											: ''
 										}`
 									}>
 									{link.name}
