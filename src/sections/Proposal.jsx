@@ -16,10 +16,11 @@ const Proposal = ({ onYes }) => {
 
 	// Cleanup audio on unmount
 	React.useEffect(() => {
+		const audio = audioRef.current;
 		return () => {
-			if (audioRef.current) {
-				audioRef.current.pause();
-				audioRef.current.currentTime = 0;
+			if (audio) {
+				audio.pause();
+				audio.currentTime = 0;
 			}
 		};
 	}, []);

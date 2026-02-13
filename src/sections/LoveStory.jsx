@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import {
 	Calendar,
 	MessageCircle,

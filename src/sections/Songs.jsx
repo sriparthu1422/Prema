@@ -117,13 +117,22 @@ const Songs = ({ autoPlay, initialTrackIndex = 0 }) => {
 		handleNext();
 	};
 
+	const lastTrackRef = useRef(currentTrack);
+
 	// Update audio src when track changes
 	useEffect(() => {
 		if (audioRef.current) {
-			audioRef.current.load();
-			if (isPlaying) audioRef.current.play();
+			if (lastTrackRef.current !== currentTrack) {
+				audioRef.current.load();
+				lastTrackRef.current = currentTrack;
+			}
+			if (isPlaying) {
+				audioRef.current
+					.play()
+					.catch((e) => console.log('Playback failed:', e));
+			}
 		}
-	}, [currentTrack]);
+	}, [currentTrack, isPlaying]);
 
 	// Update duration and current time
 	useEffect(() => {

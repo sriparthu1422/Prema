@@ -1,0 +1,29 @@
+
+> prema@0.0.0 lint
+> eslint .
+
+
+C:\Users\admin\Desktop\RP\Prema\src\sections\Songs.jsx
+  124:4  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+  127:5  warning  React Hook useEffect has a missing dependency: 'isPlaying'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\admin\Desktop\RP\Prema\src\sections\ValentineWishes.jsx
+  23:3  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  21 | 			delay: Math.random() * 5,
+  22 | 		}));
+> 23 | 		setParticles(newParticles);
+     | 		^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  24 |
+  25 | 		if (!audioRef.current) {
+  26 | 			audioRef.current = new Audio(SadaNannu);  react-hooks/set-state-in-effect
+
+Γ£û 3 problems (1 error, 2 warnings)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+

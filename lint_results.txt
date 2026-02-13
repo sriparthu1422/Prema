@@ -1,0 +1,72 @@
+
+> prema@0.0.0 lint
+> eslint .
+
+
+C:\Users\admin\Desktop\RP\Prema\src\App.jsx
+  10:27  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\admin\Desktop\RP\Prema\src\components\Navbar.jsx
+  6:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\admin\Desktop\RP\Prema\src\sections\Gallery.jsx
+  3:27  error  'useRef' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  4:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\admin\Desktop\RP\Prema\src\sections\GoldenTicket.jsx
+  4:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\admin\Desktop\RP\Prema\src\sections\Hero.jsx
+  4:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\admin\Desktop\RP\Prema\src\sections\LoveStory.jsx
+  4:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u        no-unused-vars
+  4:29  error  'useTransform' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\admin\Desktop\RP\Prema\src\sections\Proposal.jsx
+   4:10  error    'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                    no-unused-vars
+  22:14  warning  The ref value 'audioRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'audioRef.current' to a variable inside the effect, and use that variable in the cleanup function  react-hooks/exhaustive-deps
+
+C:\Users\admin\Desktop\RP\Prema\src\sections\Songs.jsx
+    5:10  error    'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                 no-unused-vars
+  126:5   warning  React Hook useEffect has a missing dependency: 'isPlaying'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\admin\Desktop\RP\Prema\src\sections\ValentineWishes.jsx
+   3:17  error  'useState' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  no-unused-vars
+   4:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    no-unused-vars
+  33:10  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  31 | 					initial={{
+  32 | 						y: '100vh',
+> 33 | 						x: Math.random() * 100 + 'vw',
+     | 						   ^^^^^^^^^^^^^ Cannot call impure function
+  34 | 						opacity: 0,
+  35 | 					}}
+  36 | 					animate={{                                                                           react-hooks/purity
+  42:17  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  40 | 					}}
+  41 | 					transition={{
+> 42 | 						duration: Math.random() * 15 + 10,
+     | 						          ^^^^^^^^^^^^^ Cannot call impure function
+  43 | 						repeat: Infinity,
+  44 | 						ease: 'linear',
+  45 | 						delay: Math.random() * 5,                                   react-hooks/purity
+  45:14  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  43 | 						repeat: Infinity,
+  44 | 						ease: 'linear',
+> 45 | 						delay: Math.random() * 5,
+     | 						       ^^^^^^^^^^^^^ Cannot call impure function
+  46 | 					}}
+  47 | 					className='absolute w-1 h-1 bg-gold/40 rounded-full blur-[1px] pointer-events-none'
+  48 | 				/>  react-hooks/purity
+
+Γ£û 17 problems (15 errors, 2 warnings)
+

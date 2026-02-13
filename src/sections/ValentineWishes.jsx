@@ -1,18 +1,34 @@
 /** @format */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Sparkles, Stars } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import SadaNannu from '../Songs/Sada Nannu Lyrical _ Mahanati Songs _ Keerthy Suresh _ Dulquer _ Samantha _ Vijay Devarakonda(MP3_160K).mp3';
 
 const ValentineWishes = () => {
 	const navigate = useNavigate();
-	const audioRef = React.useRef(new Audio(SadaNannu));
+	const audioRef = React.useRef(null);
 
-	React.useEffect(() => {
+	// Use lazy initializer for state to keep render pure
+	// and ensure random values are only generated once.
+	const [particles] = useState(() => {
+		return [...Array(20)].map((_, i) => ({
+			id: i,
+			x: Math.random() * 100 + 'vw',
+			duration: Math.random() * 15 + 10,
+			delay: Math.random() * 5,
+		}));
+	});
+
+	// Initialize audio on mount
+	useEffect(() => {
+		if (!audioRef.current) {
+			audioRef.current = new Audio(SadaNannu);
+		}
 		const audio = audioRef.current;
 		audio.play().catch((e) => console.log('Audio play failed:', e));
+
 		return () => {
 			audio.pause();
 			audio.currentTime = 0;
@@ -25,12 +41,12 @@ const ValentineWishes = () => {
 			<div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[100px] bg-gold/10 pointer-events-none'></div>
 
 			{/* Floating Gold Dust */}
-			{[...Array(20)].map((_, i) => (
+			{particles.map((p) => (
 				<motion.div
-					key={i}
+					key={p.id}
 					initial={{
 						y: '100vh',
-						x: Math.random() * 100 + 'vw',
+						x: p.x,
 						opacity: 0,
 					}}
 					animate={{
@@ -39,10 +55,10 @@ const ValentineWishes = () => {
 						scale: [0.5, 1, 0.5],
 					}}
 					transition={{
-						duration: Math.random() * 15 + 10,
+						duration: p.duration,
 						repeat: Infinity,
 						ease: 'linear',
-						delay: Math.random() * 5,
+						delay: p.delay,
 					}}
 					className='absolute w-1 h-1 bg-gold/40 rounded-full blur-[1px] pointer-events-none'
 				/>

@@ -1,0 +1,45 @@
+
+> prema@0.0.0 lint
+> eslint .
+
+
+C:\Users\admin\Desktop\RP\Prema\src\sections\Songs.jsx
+  126:5  warning  React Hook useEffect has a missing dependency: 'isPlaying'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Users\admin\Desktop\RP\Prema\src\sections\ValentineWishes.jsx
+  17:7   error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  15 | 		return [...Array(20)].map((_, i) => ({
+  16 | 			id: i,
+> 17 | 			x: Math.random() * 100 + 'vw',
+     | 			   ^^^^^^^^^^^^^ Cannot call impure function
+  18 | 			duration: Math.random() * 15 + 10,
+  19 | 			delay: Math.random() * 5,
+  20 | 		}));  react-hooks/purity
+  18:14  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  16 | 			id: i,
+  17 | 			x: Math.random() * 100 + 'vw',
+> 18 | 			duration: Math.random() * 15 + 10,
+     | 			          ^^^^^^^^^^^^^ Cannot call impure function
+  19 | 			delay: Math.random() * 5,
+  20 | 		}));
+  21 | 	}, []);                           react-hooks/purity
+  19:11  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+  17 | 			x: Math.random() * 100 + 'vw',
+  18 | 			duration: Math.random() * 15 + 10,
+> 19 | 			delay: Math.random() * 5,
+     | 			       ^^^^^^^^^^^^^ Cannot call impure function
+  20 | 		}));
+  21 | 	}, []);
+  22 |                                        react-hooks/purity
+
+Γ£û 4 problems (3 errors, 1 warning)
+
