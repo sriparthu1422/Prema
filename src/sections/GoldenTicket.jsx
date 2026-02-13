@@ -30,8 +30,10 @@ const GoldenTicket = () => {
 						initial={{ opacity: 0, y: -20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						className='text-4xl md:text-5xl font-telugu text-gold drop-shadow-md mb-8'>
-						Your Special Gift
+						className='text-2xl md:text-3xl font-telugu text-gold drop-shadow-md mb-8 leading-snug'>
+						{!isOpen
+							? 'Inkokka special gift undi na daggara... idhi box lo kaadu, naa heart lo undi 💖🎁'
+							: 'Igo naa special gift... box lo kaadu, naa manasu tho istunaa 🎁♾️💖'}
 					</motion.h2>
 
 					<AnimatePresence mode='wait'>
@@ -86,7 +88,7 @@ const GoldenTicket = () => {
 
 									<div className='space-y-4 text-center'>
 										<h3 className='text-2xl md:text-3xl font-serif text-cream font-bold'>
-											A Date With Me
+											Mana kalisi nadiche jeevitha yatra ki special ticket 🎫🤩
 										</h3>
 										<p className='text-gold-light font-telugu text-base md:text-lg'>
 											Valid Forever • Non-Transferable
