@@ -5,14 +5,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Heart, Maximize2 } from 'lucide-react';
 
 import Img1 from '../Songs/images/1.jpg';
-import Img2 from '../Songs/images/2..jpg';
-import Img3 from '../Songs/images/3..jpg';
+import Img2 from '../Songs/images/2.jpg';
+import Img3 from '../Songs/images/3.jpg';
 import Img4 from '../Songs/images/4.jpg';
 import Img5 from '../Songs/images/5.jpg';
-import Img6 from '../Songs/images/6..jpg';
-import Img7 from '../Songs/images/7..jpg';
-import Img8 from '../Songs/images/8..jpg';
-import Img9 from '../Songs/images/9..jpg';
+import Img6 from '../Songs/images/6.jpg';
+import Img7 from '../Songs/images/7.jpg';
+import Img8 from '../Songs/images/8.jpg';
+import Img9 from '../Songs/images/9.jpg';
 import Img10 from '../Songs/images/10.jpg';
 
 const Gallery = () => {

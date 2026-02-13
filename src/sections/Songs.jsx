@@ -19,11 +19,11 @@ import NuvvunteChaley from '../Songs/Nuvvunte Chaley - Lyrical _ Andhra King Tal
 import OhPilla from '../Songs/Oh Pilla(MP3_160K).mp3';
 import SadaNannu from '../Songs/Sada Nannu Lyrical _ Mahanati Songs _ Keerthy Suresh _ Dulquer _ Samantha _ Vijay Devarakonda(MP3_160K).mp3';
 import Vikramasimha from '../Songs/Vikramasimha - Yedemaina Sakhi Video _ A.R. Rahman _ Rajinikanth_ Deepika(MP3_160K).mp3';
-import YedemainaSakhiCover from '../Songs/images/8..jpg';
+import YedemainaSakhiCover from '../Songs/images/8.jpg';
 import SadaNannuCover from '../Songs/images/10.jpg';
-import NeeliMeghamulaCover from '../Songs/images/6..jpg';
+import NeeliMeghamulaCover from '../Songs/images/6.jpg';
 import OhPillaCover from '../Songs/images/1.jpg';
-import KadalalleCover from '../Songs/images/9..jpg';
+import KadalalleCover from '../Songs/images/9.jpg';
 import NuvvunteChaleyCover from '../Songs/images/5.jpg';
 
 const playlist = [
