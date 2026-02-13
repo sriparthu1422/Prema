@@ -1,0 +1,55 @@
+/** @format */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.text-glow {
+		text-shadow: 0 0 10px rgba(218, 165, 32, 0.5);
+	}
+
+	.glass-panel {
+		@apply bg-black/30 backdrop-blur-md border border-white/10;
+	}
+
+	/* Custom Scrollbar */
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	::-webkit-scrollbar-thumb {
+		@apply bg-gold/30 rounded-full hover:bg-gold/50;
+	}
+}
+
+html {
+	scroll-behavior: auto; /* Reset smooth scroll behavior */
+}
+
+body {
+	@apply bg-zinc-900 text-cream overflow-x-hidden;
+	font-family: 'Inter', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-20px);
+	}
+}
+
+.animate-float {
+	animation: float 6s ease-in-out infinite;
+}
+
+.font-telugu {
+	font-family: 'Lakki Reddy', serif;
+}
